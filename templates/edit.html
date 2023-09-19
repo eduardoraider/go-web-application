@@ -1,0 +1,53 @@
+{{define "Edit"}}
+{{template "_head"}}
+<body>
+    {{template "_navbar"}}
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-5">Edit product</h1>
+                <p class="lead">Details</p>
+            </div>
+        </div>
+        <form method="POST" action="update">
+            <input type="hidden" name="id" value="{{.Id}}">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" class="form-control" value="{{.Name}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" name="description" class="form-control" value="{{.Description}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="number" name="price" class="form-control" step="0.01" value="{{.Price}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label for="qty">Qty:</label>
+                        <input type="number" name="qty" class="form-control" value="{{.Qty}}">
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-info" href="/">Back</a>
+            <button type="submit" value="save" class="btn btn-success">Save</button>
+            
+        </form>
+</div>
+</body>
+</html>
+{{end}}
